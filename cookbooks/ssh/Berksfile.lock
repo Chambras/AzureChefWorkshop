@@ -1,0 +1,7 @@
+DEPENDENCIES
+  ssh
+    path: .
+    metadata: true
+
+GRAPH
+  ssh (0.1.0)

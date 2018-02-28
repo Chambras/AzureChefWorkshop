@@ -1,0 +1,243 @@
+I, [2018-02-28T19:27:45.145325 #72209]  INFO -- server-centos-73: -----> Cleaning up any prior instances of <server-centos-73>
+I, [2018-02-28T19:27:45.145822 #72209]  INFO -- server-centos-73: -----> Destroying <server-centos-73>...
+I, [2018-02-28T19:27:45.302068 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:27:45.347435 #72209]  INFO -- server-centos-73: UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+I, [2018-02-28T19:27:45.347495 #72209]  INFO -- server-centos-73: root                71750               71734               0                   19:26               ?                   00:00:00            /usr/sbin/sshd -D -o UseDNS=no -o UsePAM=no -o PasswordAuthentication=yes -o UsePrivilegeSeparation=no -o PidFile=/tmp/sshd.pid
+I, [2018-02-28T19:27:45.574589 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:27:45.987988 #72209]  INFO -- server-centos-73: 5f61e9367c0e386b522e58d05c62d1599fdac928ae73ca3b53832acd98b96f54
+I, [2018-02-28T19:27:46.165838 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:27:47.036013 #72209]  INFO -- server-centos-73: 5f61e9367c0e386b522e58d05c62d1599fdac928ae73ca3b53832acd98b96f54
+I, [2018-02-28T19:27:47.050105 #72209]  INFO -- server-centos-73: Finished destroying <server-centos-73> (0m1.90s).
+I, [2018-02-28T19:27:47.050447 #72209]  INFO -- server-centos-73: -----> Testing <server-centos-73>
+I, [2018-02-28T19:27:47.050532 #72209]  INFO -- server-centos-73: -----> Creating <server-centos-73>...
+I, [2018-02-28T19:27:47.217763 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:27:47.236423 #72209]  INFO -- server-centos-73: Sending build context to Docker daemon 209.4 kB
+I, [2018-02-28T19:27:47.272418 #72209]  INFO -- server-centos-73: Step 1 : FROM centos:centos7
+I, [2018-02-28T19:27:47.272482 #72209]  INFO -- server-centos-73:  ---> ff426288ea90
+I, [2018-02-28T19:27:47.272508 #72209]  INFO -- server-centos-73: Step 2 : ENV container docker
+I, [2018-02-28T19:27:47.272568 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.272584 #72209]  INFO -- server-centos-73:  ---> a39460eb8b23
+I, [2018-02-28T19:27:47.272599 #72209]  INFO -- server-centos-73: Step 3 : RUN yum clean all
+I, [2018-02-28T19:27:47.272613 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.272625 #72209]  INFO -- server-centos-73:  ---> c591b7b8323b
+I, [2018-02-28T19:27:47.272638 #72209]  INFO -- server-centos-73: Step 4 : RUN yum install -y sudo openssh-server openssh-clients which curl
+I, [2018-02-28T19:27:47.272653 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.272666 #72209]  INFO -- server-centos-73:  ---> a1368df66329
+I, [2018-02-28T19:27:47.272691 #72209]  INFO -- server-centos-73: Step 5 : RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
+I, [2018-02-28T19:27:47.272716 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.272728 #72209]  INFO -- server-centos-73:  ---> cf482e17ae70
+I, [2018-02-28T19:27:47.272740 #72209]  INFO -- server-centos-73: Step 6 : RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
+I, [2018-02-28T19:27:47.272751 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.272763 #72209]  INFO -- server-centos-73:  ---> fe0ac98646a2
+I, [2018-02-28T19:27:47.272776 #72209]  INFO -- server-centos-73: Step 7 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
+I, [2018-02-28T19:27:47.272788 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.272799 #72209]  INFO -- server-centos-73:  ---> 50f5aa3093bd
+I, [2018-02-28T19:27:47.272811 #72209]  INFO -- server-centos-73: Step 8 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+I, [2018-02-28T19:27:47.272834 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.272853 #72209]  INFO -- server-centos-73:  ---> aa98efc8481f
+I, [2018-02-28T19:27:47.272867 #72209]  INFO -- server-centos-73: Step 9 : RUN echo "Defaults !requiretty" >> /etc/sudoers
+I, [2018-02-28T19:27:47.274394 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.274446 #72209]  INFO -- server-centos-73:  ---> ac4580fcced0
+I, [2018-02-28T19:27:47.274468 #72209]  INFO -- server-centos-73: Step 10 : RUN mkdir -p /home/kitchen/.ssh
+I, [2018-02-28T19:27:47.274484 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.274499 #72209]  INFO -- server-centos-73:  ---> 25d20bfb9753
+I, [2018-02-28T19:27:47.274513 #72209]  INFO -- server-centos-73: Step 11 : RUN chown -R kitchen /home/kitchen/.ssh
+I, [2018-02-28T19:27:47.274526 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.274538 #72209]  INFO -- server-centos-73:  ---> 5d11413d5f14
+I, [2018-02-28T19:27:47.274551 #72209]  INFO -- server-centos-73: Step 12 : RUN chmod 0700 /home/kitchen/.ssh
+I, [2018-02-28T19:27:47.274563 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.274576 #72209]  INFO -- server-centos-73:  ---> 7608d6c26a66
+I, [2018-02-28T19:27:47.274589 #72209]  INFO -- server-centos-73: Step 13 : RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2018-02-28T19:27:47.274915 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.274943 #72209]  INFO -- server-centos-73:  ---> abda437ab537
+I, [2018-02-28T19:27:47.274958 #72209]  INFO -- server-centos-73: Step 14 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2018-02-28T19:27:47.274974 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.274986 #72209]  INFO -- server-centos-73:  ---> 340173dc054d
+I, [2018-02-28T19:27:47.274997 #72209]  INFO -- server-centos-73: Step 15 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2018-02-28T19:27:47.275144 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.275177 #72209]  INFO -- server-centos-73:  ---> dbd37038c0ed
+I, [2018-02-28T19:27:47.275198 #72209]  INFO -- server-centos-73: Step 16 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQCrs147BxyKP20300AZHZRENwKBpOeh6LrQwYkzcz9qWr3SFFlvpP7ODrBnOA5QayDbUAQUq27EOQWKmYfNJsPvg8GBD/ukdGv/ixGQHNdXIe/E6BShDJ/0kkAG2NR59hNpsTOAxxAsWNpYHTO\+T0F9fwJmTawLPDIJaLSWg2K3psYuVisxJF5pCzJnD72F5TBmp3kg/nnsxRypZLO6dzZbrPk0TTfhcts8Kf3XOz4OZRC2jZUZk5Pxs7/ixN5DkvqLQtouvESMIMqU2PqxebeX9qc3uFUGtAvdDrWjfhKkxLd5h8sAIIO440TEeqxVanH8t936UKsooPvxx1gt\+lgb\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2018-02-28T19:27:47.275395 #72209]  INFO -- server-centos-73:  ---> Using cache
+I, [2018-02-28T19:27:47.275427 #72209]  INFO -- server-centos-73:  ---> d1e00c06007c
+I, [2018-02-28T19:27:47.275444 #72209]  INFO -- server-centos-73: Successfully built d1e00c06007c
+I, [2018-02-28T19:27:47.444834 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:27:48.115688 #72209]  INFO -- server-centos-73: ed73b779067ba608e64df1f864b5495ee863ae37831c2f6081343ef76d4ec50e
+I, [2018-02-28T19:27:48.967458 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:27:48.983184 #72209]  INFO -- server-centos-73: 0.0.0.0:32775
+I, [2018-02-28T19:27:49.136555 #72209]  INFO -- server-centos-73: [SSH] Established
+I, [2018-02-28T19:27:49.137507 #72209]  INFO -- server-centos-73: Finished creating <server-centos-73> (0m2.09s).
+I, [2018-02-28T19:27:49.137590 #72209]  INFO -- server-centos-73: -----> Converging <server-centos-73>...
+I, [2018-02-28T19:27:49.138698 #72209]  INFO -- server-centos-73: Preparing files for transfer
+I, [2018-02-28T19:27:49.138839 #72209]  INFO -- server-centos-73: Preparing dna.json
+I, [2018-02-28T19:27:49.139626 #72209]  INFO -- server-centos-73: Resolving cookbook dependencies with Berkshelf 6.3.1...
+I, [2018-02-28T19:27:51.147970 #72209]  INFO -- server-centos-73: Removing non-cookbook files before transfer
+I, [2018-02-28T19:27:51.149769 #72209]  INFO -- server-centos-73: Preparing validation.pem
+I, [2018-02-28T19:27:51.149981 #72209]  INFO -- server-centos-73: Preparing client.rb
+I, [2018-02-28T19:27:51.283036 #72209]  INFO -- server-centos-73: -----> Installing Chef Omnibus (install only if missing)
+I, [2018-02-28T19:27:51.290252 #72209]  INFO -- server-centos-73: Downloading https://omnitruck.chef.io/install.sh to file /tmp/install.sh
+I, [2018-02-28T19:27:51.291332 #72209]  INFO -- server-centos-73: Trying curl...
+I, [2018-02-28T19:27:51.682751 #72209]  INFO -- server-centos-73: Download complete.
+I, [2018-02-28T19:27:51.696188 #72209]  INFO -- server-centos-73: el 7 x86_64
+I, [2018-02-28T19:27:51.696230 #72209]  INFO -- server-centos-73: Getting information for chef stable  for el...
+I, [2018-02-28T19:27:51.696248 #72209]  INFO -- server-centos-73: downloading https://omnitruck.chef.io/stable/chef/metadata?v=&p=el&pv=7&m=x86_64
+I, [2018-02-28T19:27:51.696262 #72209]  INFO -- server-centos-73:   to file /tmp/install.sh.42/metadata.txt
+I, [2018-02-28T19:27:51.696619 #72209]  INFO -- server-centos-73: trying curl...
+I, [2018-02-28T19:27:51.821396 #72209]  INFO -- server-centos-73: sha1	87f6a322308a54296482bcc33911b53dd8f620d8
+I, [2018-02-28T19:27:51.821459 #72209]  INFO -- server-centos-73: sha256	3c12da7302c7b3f5d308dd3c3a66b9c52eeb145258bd78865233fd29626f06e0
+I, [2018-02-28T19:27:51.821484 #72209]  INFO -- server-centos-73: url	https://packages.chef.io/files/stable/chef/13.8.0/el/7/chef-13.8.0-1.el7.x86_64.rpm
+I, [2018-02-28T19:27:51.821501 #72209]  INFO -- server-centos-73: version	13.8.0
+I, [2018-02-28T19:27:51.823046 #72209]  INFO -- server-centos-73: downloaded metadata file looks valid...
+I, [2018-02-28T19:27:51.837593 #72209]  INFO -- server-centos-73: downloading https://packages.chef.io/files/stable/chef/13.8.0/el/7/chef-13.8.0-1.el7.x86_64.rpm
+I, [2018-02-28T19:27:51.837639 #72209]  INFO -- server-centos-73:   to file /tmp/install.sh.42/chef-13.8.0-1.el7.x86_64.rpm
+I, [2018-02-28T19:27:51.837663 #72209]  INFO -- server-centos-73: trying curl...
+I, [2018-02-28T19:27:52.267478 #72209]  INFO -- server-centos-73: Comparing checksum with sha256sum...
+I, [2018-02-28T19:27:52.416043 #72209]  INFO -- server-centos-73: 
+I, [2018-02-28T19:27:52.416110 #72209]  INFO -- server-centos-73: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2018-02-28T19:27:52.416130 #72209]  INFO -- server-centos-73: 
+I, [2018-02-28T19:27:52.416151 #72209]  INFO -- server-centos-73: You are installing an omnibus package without a version pin.  If you are installing
+I, [2018-02-28T19:27:52.416168 #72209]  INFO -- server-centos-73: on production servers via an automated process this is DANGEROUS and you will
+I, [2018-02-28T19:27:52.416182 #72209]  INFO -- server-centos-73: be upgraded without warning on new releases, even to new major releases.
+I, [2018-02-28T19:27:52.416195 #72209]  INFO -- server-centos-73: Letting the version float is only appropriate in desktop, test, development or
+I, [2018-02-28T19:27:52.416208 #72209]  INFO -- server-centos-73: CI/CD environments.
+I, [2018-02-28T19:27:52.416219 #72209]  INFO -- server-centos-73: 
+I, [2018-02-28T19:27:52.416232 #72209]  INFO -- server-centos-73: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2018-02-28T19:27:52.416244 #72209]  INFO -- server-centos-73: 
+I, [2018-02-28T19:27:52.416255 #72209]  INFO -- server-centos-73: Installing chef 
+I, [2018-02-28T19:27:52.416267 #72209]  INFO -- server-centos-73: installing with rpm...
+I, [2018-02-28T19:27:52.459760 #72209]  INFO -- server-centos-73: warning: /tmp/install.sh.42/chef-13.8.0-1.el7.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+I, [2018-02-28T19:27:52.599973 #72209]  INFO -- server-centos-73: Preparing...                                                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]
+I, [2018-02-28T19:27:52.612783 #72209]  INFO -- server-centos-73: Updating / installing...
+I, [2018-02-28T19:28:07.609794 #72209]  INFO -- server-centos-73:    1:chef-13.8.0-1.el7                                                  (  1%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 51%)##################                ( 54%)###################               ( 57%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)################################# ( 99%)################################# [100%]
+I, [2018-02-28T19:28:08.938199 #72209]  INFO -- server-centos-73: Thank you for installing Chef!
+I, [2018-02-28T19:28:09.727066 #72209]  INFO -- server-centos-73: Transferring files to <server-centos-73>
+I, [2018-02-28T19:28:11.219704 #72209]  INFO -- server-centos-73: Starting Chef Client, version 13.8.0
+I, [2018-02-28T19:28:11.463494 #72209]  INFO -- server-centos-73: [2018-02-28T19:28:11+00:00] WARN: Plugin Network: unable to detect ipaddress
+I, [2018-02-28T19:28:11.854719 #72209]  INFO -- server-centos-73: Creating a new client identity for server-centos-73 using the validator key.
+I, [2018-02-28T19:28:11.958751 #72209]  INFO -- server-centos-73: resolving cookbooks for run list: ["ssh::server"]
+I, [2018-02-28T19:28:11.974963 #72209]  INFO -- server-centos-73: Synchronizing Cookbooks:
+I, [2018-02-28T19:28:11.981526 #72209]  INFO -- server-centos-73:   - ssh (0.1.0)
+I, [2018-02-28T19:28:11.985553 #72209]  INFO -- server-centos-73: Installing Cookbook Gems:
+I, [2018-02-28T19:28:11.985589 #72209]  INFO -- server-centos-73: Compiling Cookbooks...
+I, [2018-02-28T19:28:11.993469 #72209]  INFO -- server-centos-73: Converging 1 resources
+I, [2018-02-28T19:28:11.993505 #72209]  INFO -- server-centos-73: Recipe: ssh::server
+I, [2018-02-28T19:28:11.995545 #72209]  INFO -- server-centos-73:   * template[/etc/ssh/sshd_config] action create
+I, [2018-02-28T19:28:11.995611 #72209]  INFO -- server-centos-73:     - update content in file /etc/ssh/sshd_config from 86eb7b to 7b00ff
+I, [2018-02-28T19:28:11.995635 #72209]  INFO -- server-centos-73:     --- /etc/ssh/sshd_config	2017-10-19 21:52:25.000000000 +0000
+I, [2018-02-28T19:28:11.995651 #72209]  INFO -- server-centos-73:     +++ /etc/ssh/.chef-sshd_config20180228-171-k4ekt3	2018-02-28 19:28:11.987941042 +0000
+I, [2018-02-28T19:28:11.995666 #72209]  INFO -- server-centos-73:     @@ -1,4 +1,4 @@
+I, [2018-02-28T19:28:11.995682 #72209]  INFO -- server-centos-73:     -#	$OpenBSD: sshd_config,v 1.100 2016/08/15 12:32:04 naddy Exp $
+I, [2018-02-28T19:28:11.995697 #72209]  INFO -- server-centos-73:     +#	$OpenBSD: sshd_config,v 1.93 2014/01/10 05:59:19 djm Exp $
+I, [2018-02-28T19:28:11.995713 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.995727 #72209]  INFO -- server-centos-73:      # This is the sshd server system-wide configuration file.  See
+I, [2018-02-28T19:28:11.995741 #72209]  INFO -- server-centos-73:      # sshd_config(5) for more information.
+I, [2018-02-28T19:28:11.995754 #72209]  INFO -- server-centos-73:     @@ -14,20 +14,32 @@
+I, [2018-02-28T19:28:11.995771 #72209]  INFO -- server-centos-73:      # SELinux about this change.
+I, [2018-02-28T19:28:11.995785 #72209]  INFO -- server-centos-73:      # semanage port -a -t ssh_port_t -p tcp #PORTNUMBER
+I, [2018-02-28T19:28:11.995813 #72209]  INFO -- server-centos-73:      #
+I, [2018-02-28T19:28:11.995832 #72209]  INFO -- server-centos-73:     -#Port 22
+I, [2018-02-28T19:28:11.995846 #72209]  INFO -- server-centos-73:     +Port 22
+I, [2018-02-28T19:28:11.995861 #72209]  INFO -- server-centos-73:     +Port 443
+I, [2018-02-28T19:28:11.995875 #72209]  INFO -- server-centos-73:      #AddressFamily any
+I, [2018-02-28T19:28:11.995888 #72209]  INFO -- server-centos-73:      #ListenAddress 0.0.0.0
+I, [2018-02-28T19:28:11.995903 #72209]  INFO -- server-centos-73:      #ListenAddress ::
+I, [2018-02-28T19:28:11.995916 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.995931 #72209]  INFO -- server-centos-73:     +# The default requires explicit activation of protocol 1
+I, [2018-02-28T19:28:11.995945 #72209]  INFO -- server-centos-73:     +Protocol 2
+I, [2018-02-28T19:28:11.995957 #72209]  INFO -- server-centos-73:     +
+I, [2018-02-28T19:28:11.995972 #72209]  INFO -- server-centos-73:     +# HostKey for protocol version 1
+I, [2018-02-28T19:28:11.995987 #72209]  INFO -- server-centos-73:     +#HostKey /etc/ssh/ssh_host_key
+I, [2018-02-28T19:28:11.995999 #72209]  INFO -- server-centos-73:     +# HostKeys for protocol version 2
+I, [2018-02-28T19:28:11.996015 #72209]  INFO -- server-centos-73:      HostKey /etc/ssh/ssh_host_rsa_key
+I, [2018-02-28T19:28:11.996029 #72209]  INFO -- server-centos-73:      #HostKey /etc/ssh/ssh_host_dsa_key
+I, [2018-02-28T19:28:11.996042 #72209]  INFO -- server-centos-73:      HostKey /etc/ssh/ssh_host_ecdsa_key
+I, [2018-02-28T19:28:11.996055 #72209]  INFO -- server-centos-73:      HostKey /etc/ssh/ssh_host_ed25519_key
+I, [2018-02-28T19:28:11.996069 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.996128 #72209]  INFO -- server-centos-73:     +# Lifetime and size of ephemeral version 1 server key
+I, [2018-02-28T19:28:11.996145 #72209]  INFO -- server-centos-73:     +#KeyRegenerationInterval 1h
+I, [2018-02-28T19:28:11.996165 #72209]  INFO -- server-centos-73:     +#ServerKeyBits 1024
+I, [2018-02-28T19:28:11.996180 #72209]  INFO -- server-centos-73:     +
+I, [2018-02-28T19:28:11.996194 #72209]  INFO -- server-centos-73:      # Ciphers and keying
+I, [2018-02-28T19:28:11.996207 #72209]  INFO -- server-centos-73:      #RekeyLimit default none
+I, [2018-02-28T19:28:11.996226 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.996241 #72209]  INFO -- server-centos-73:      # Logging
+I, [2018-02-28T19:28:11.996255 #72209]  INFO -- server-centos-73:     +# obsoletes QuietMode and FascistLogging
+I, [2018-02-28T19:28:11.996269 #72209]  INFO -- server-centos-73:      #SyslogFacility AUTH
+I, [2018-02-28T19:28:11.996282 #72209]  INFO -- server-centos-73:      SyslogFacility AUTHPRIV
+I, [2018-02-28T19:28:11.996299 #72209]  INFO -- server-centos-73:      #LogLevel INFO
+I, [2018-02-28T19:28:11.996314 #72209]  INFO -- server-centos-73:     @@ -40,11 +52,12 @@
+I, [2018-02-28T19:28:11.996382 #72209]  INFO -- server-centos-73:      #MaxAuthTries 6
+I, [2018-02-28T19:28:11.996399 #72209]  INFO -- server-centos-73:      #MaxSessions 10
+I, [2018-02-28T19:28:11.996424 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.996438 #72209]  INFO -- server-centos-73:     +#RSAAuthentication yes
+I, [2018-02-28T19:28:11.996451 #72209]  INFO -- server-centos-73:      #PubkeyAuthentication yes
+I, [2018-02-28T19:28:11.996462 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.996474 #72209]  INFO -- server-centos-73:      # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+I, [2018-02-28T19:28:11.996486 #72209]  INFO -- server-centos-73:      # but this is overridden so installations will only check .ssh/authorized_keys
+I, [2018-02-28T19:28:11.996498 #72209]  INFO -- server-centos-73:     -AuthorizedKeysFile	.ssh/authorized_keys
+I, [2018-02-28T19:28:11.996509 #72209]  INFO -- server-centos-73:     +AuthorizedKeysFile .ssh/authorized_keys
+I, [2018-02-28T19:28:11.996520 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.996537 #72209]  INFO -- server-centos-73:      #AuthorizedPrincipalsFile none
+I, [2018-02-28T19:28:11.996549 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.996573 #72209]  INFO -- server-centos-73:     @@ -52,17 +65,18 @@
+I, [2018-02-28T19:28:11.996585 #72209]  INFO -- server-centos-73:      #AuthorizedKeysCommandUser nobody
+I, [2018-02-28T19:28:11.996600 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:11.996613 #72209]  INFO -- server-centos-73:      # For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+I, [2018-02-28T19:28:12.000607 #72209]  INFO -- server-centos-73:     +#RhostsRSAAuthentication no
+I, [2018-02-28T19:28:12.000645 #72209]  INFO -- server-centos-73:     +# similar for protocol version 2
+I, [2018-02-28T19:28:12.000665 #72209]  INFO -- server-centos-73:      #HostbasedAuthentication no
+I, [2018-02-28T19:28:12.000681 #72209]  INFO -- server-centos-73:      # Change to yes if you don't trust ~/.ssh/known_hosts for
+I, [2018-02-28T19:28:12.000700 #72209]  INFO -- server-centos-73:     -# HostbasedAuthentication
+I, [2018-02-28T19:28:12.000715 #72209]  INFO -- server-centos-73:     +# RhostsRSAAuthentication and HostbasedAuthentication
+I, [2018-02-28T19:28:12.000729 #72209]  INFO -- server-centos-73:      #IgnoreUserKnownHosts no
+I, [2018-02-28T19:28:12.000746 #72209]  INFO -- server-centos-73:      # Don't read the user's ~/.rhosts and ~/.shosts files
+I, [2018-02-28T19:28:12.000761 #72209]  INFO -- server-centos-73:      #IgnoreRhosts yes
+I, [2018-02-28T19:28:12.000773 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:12.000785 #72209]  INFO -- server-centos-73:      # To disable tunneled clear text passwords, change to no here!
+I, [2018-02-28T19:28:12.000803 #72209]  INFO -- server-centos-73:     -#PasswordAuthentication yes
+I, [2018-02-28T19:28:12.000816 #72209]  INFO -- server-centos-73:     -#PermitEmptyPasswords no
+I, [2018-02-28T19:28:12.000829 #72209]  INFO -- server-centos-73:      PasswordAuthentication yes
+I, [2018-02-28T19:28:12.000840 #72209]  INFO -- server-centos-73:     +PermitEmptyPasswords no
+I, [2018-02-28T19:28:12.000855 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:12.000869 #72209]  INFO -- server-centos-73:      # Change to no to disable s/key passwords
+I, [2018-02-28T19:28:12.000881 #72209]  INFO -- server-centos-73:      #ChallengeResponseAuthentication yes
+I, [2018-02-28T19:28:12.000893 #72209]  INFO -- server-centos-73:     @@ -106,7 +120,7 @@
+I, [2018-02-28T19:28:12.000906 #72209]  INFO -- server-centos-73:      #PrintLastLog yes
+I, [2018-02-28T19:28:12.000920 #72209]  INFO -- server-centos-73:      #TCPKeepAlive yes
+I, [2018-02-28T19:28:12.000932 #72209]  INFO -- server-centos-73:      #UseLogin no
+I, [2018-02-28T19:28:12.000944 #72209]  INFO -- server-centos-73:     -#UsePrivilegeSeparation sandbox
+I, [2018-02-28T19:28:12.000956 #72209]  INFO -- server-centos-73:     +UsePrivilegeSeparation sandbox		# Default for new installations.
+I, [2018-02-28T19:28:12.000968 #72209]  INFO -- server-centos-73:      #PermitUserEnvironment no
+I, [2018-02-28T19:28:12.000983 #72209]  INFO -- server-centos-73:      #Compression delayed
+I, [2018-02-28T19:28:12.001019 #72209]  INFO -- server-centos-73:      #ClientAliveInterval 0
+I, [2018-02-28T19:28:12.001033 #72209]  INFO -- server-centos-73:     @@ -129,7 +143,7 @@
+I, [2018-02-28T19:28:12.001045 #72209]  INFO -- server-centos-73:      AcceptEnv XMODIFIERS
+I, [2018-02-28T19:28:12.001056 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:12.001067 #72209]  INFO -- server-centos-73:      # override default of no subsystems
+I, [2018-02-28T19:28:12.001123 #72209]  INFO -- server-centos-73:     -Subsystem	sftp	/usr/libexec/openssh/sftp-server
+I, [2018-02-28T19:28:12.001144 #72209]  INFO -- server-centos-73:     +Subsystem sftp	/usr/libexec/openssh/sftp-server
+I, [2018-02-28T19:28:12.001157 #72209]  INFO -- server-centos-73:      
+I, [2018-02-28T19:28:12.001170 #72209]  INFO -- server-centos-73:      # Example of overriding settings on a per-user basis
+I, [2018-02-28T19:28:12.001190 #72209]  INFO -- server-centos-73:      #Match User anoncvs
+I, [2018-02-28T19:28:12.001206 #72209]  INFO -- server-centos-73:     - change mode from '0600' to '0644'
+I, [2018-02-28T19:28:12.024596 #72209]  INFO -- server-centos-73: 
+I, [2018-02-28T19:28:12.024639 #72209]  INFO -- server-centos-73: Running handlers:
+I, [2018-02-28T19:28:12.024661 #72209]  INFO -- server-centos-73: Running handlers complete
+I, [2018-02-28T19:28:12.024677 #72209]  INFO -- server-centos-73: Chef Client finished, 1/1 resources updated in 00 seconds
+I, [2018-02-28T19:28:12.048217 #72209]  INFO -- server-centos-73: Finished converging <server-centos-73> (0m22.91s).
+I, [2018-02-28T19:28:12.048328 #72209]  INFO -- server-centos-73: -----> Setting up <server-centos-73>...
+I, [2018-02-28T19:28:12.049250 #72209]  INFO -- server-centos-73: Finished setting up <server-centos-73> (0m0.00s).
+I, [2018-02-28T19:28:12.049333 #72209]  INFO -- server-centos-73: -----> Verifying <server-centos-73>...
+I, [2018-02-28T19:28:12.792566 #72209]  INFO -- server-centos-73: Loaded ssh 
+I, [2018-02-28T19:28:12.861025 #72209]  INFO -- server-centos-73: Finished verifying <server-centos-73> (0m0.81s).
+I, [2018-02-28T19:28:12.861601 #72209]  INFO -- server-centos-73: -----> Destroying <server-centos-73>...
+I, [2018-02-28T19:28:13.027827 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:28:13.076011 #72209]  INFO -- server-centos-73: UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+I, [2018-02-28T19:28:13.076195 #72209]  INFO -- server-centos-73: root                72409               72392               0                   19:27               ?                   00:00:00            /usr/sbin/sshd -D -o UseDNS=no -o UsePAM=no -o PasswordAuthentication=yes -o UsePrivilegeSeparation=no -o PidFile=/tmp/sshd.pid
+I, [2018-02-28T19:28:13.076291 #72209]  INFO -- server-centos-73: root                72462               72409               0                   19:27               ?                   00:00:00            sshd: kitchen@pts/0
+I, [2018-02-28T19:28:13.076318 #72209]  INFO -- server-centos-73: root                72824               72409               1                   19:28               ?                   00:00:00            sshd: kitchen@notty
+I, [2018-02-28T19:28:13.256507 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:28:19.380953 #72209]  INFO -- server-centos-73: ed73b779067ba608e64df1f864b5495ee863ae37831c2f6081343ef76d4ec50e
+I, [2018-02-28T19:28:19.552971 #72209]  INFO -- server-centos-73: Boolean docker_transition_unconfined is not defined
+I, [2018-02-28T19:28:21.751453 #72209]  INFO -- server-centos-73: ed73b779067ba608e64df1f864b5495ee863ae37831c2f6081343ef76d4ec50e
+I, [2018-02-28T19:28:21.764472 #72209]  INFO -- server-centos-73: Finished destroying <server-centos-73> (0m8.90s).
+I, [2018-02-28T19:28:21.764718 #72209]  INFO -- server-centos-73: Finished testing <server-centos-73> (0m36.62s).
